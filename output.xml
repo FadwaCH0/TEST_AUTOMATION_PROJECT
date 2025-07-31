@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.8.10 on win32)" generated="2025-07-31T00:02:25.234891" rpa="false" schemaversion="5">
+<suite id="s1" name="Ui" source="C:\Users\FCHERQUI\Desktop\test-automation-project\tests\ui">
+<suite id="s1-s1" name="03 Error Handling Tests" source="C:\Users\FCHERQUI\Desktop\test-automation-project\tests\ui\03_error_handling_tests.robot">
+<test id="s1-s1-t1" name="Navigation Should Work Correctly" line="15">
+<kw name="Setup Browser" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-31T00:02:25.461400" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:5173'.</msg>
+<msg time="2025-07-31T00:02:26.011568" level="WARN">The chromedriver version (137.0.7151.56) detected in PATH at C:\Users\FCHERQUI\AppData\Local\Programs\Python\Python38-32\chromedriver.exe might not be compatible with the detected chrome version (138.0.7204.169); currently, chromedriver 138.0.7204.183 is recommended for chrome 138.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-31T00:02:25.461400" elapsed="3.369378"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-31T00:02:28.830778" elapsed="0.066447"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${MEDIUM_TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-07-31T00:02:28.898223" elapsed="0.001000"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>${SHORT_TIMEOUT}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-07-31T00:02:28.900224" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2025-07-31T00:02:25.461400" elapsed="3.439825"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-31T00:02:28.901225" level="INFO">Opening url 'http://localhost:5173'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-31T00:02:28.901225" elapsed="0.181979"/>
+</kw>
+<kw name="Wait For Navigation" owner="keywords">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>${expected_path}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-31T00:02:29.083204" elapsed="0.000000"/>
+</kw>
+<arg>/login</arg>
+<status status="PASS" start="2025-07-31T00:02:29.083204" elapsed="0.000000"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2025-07-31T00:02:29.099580" level="INFO">Current location contains '/login'.</msg>
+<arg>/login</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-31T00:02:29.083204" elapsed="0.016376"/>
+</kw>
+<kw name="Login With Credentials" owner="keywords">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-31T00:02:29.099580" level="INFO">Opening url 'http://localhost:5173/login'</msg>
+<arg>${LOGIN_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-31T00:02:29.099580" elapsed="0.043559"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css:[data-testid="username-input"]</arg>
+<arg>timeout=${MEDIUM_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-31T00:02:29.144139" elapsed="0.004492"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-31T00:02:29.148631" level="INFO">Typing text 'testuser' into text field 'css:[data-testid="username-input"]'.</msg>
+<arg>css:[data-testid="username-input"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-31T00:02:29.148631" elapsed="0.087099"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-31T00:02:29.235730" level="INFO">Typing text 'password' into text field 'css:[data-testid="password-input"]'.</msg>
+<arg>css:[data-testid="password-input"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-31T00:02:29.235730" elapsed="0.042718"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-31T00:02:29.278448" level="INFO">Clicking button 'css:[data-testid="login-button"]'.</msg>
+<arg>css:[data-testid="login-button"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-31T00:02:29.278448" elapsed="0.069628"/>
+</kw>
+<arg>${VALID_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-07-31T00:02:29.099580" elapsed="0.248496"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/todos</arg>
+<arg>30s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-31T00:02:29.348076" elapsed="0.203175"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-31T00:02:29.551251" level="INFO">Opening url 'http://localhost:5173'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-31T00:02:29.551251" elapsed="0.053996"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/todos</arg>
+<arg>30s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-31T00:02:29.606246" elapsed="0.009999"/>
+</kw>
+<kw name="Wait For Navigation" owner="keywords">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>${expected_path}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-31T00:02:29.617247" elapsed="0.005999"/>
+</kw>
+<arg>/todos</arg>
+<status status="PASS" start="2025-07-31T00:02:29.617247" elapsed="0.005999"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2025-07-31T00:02:29.626244" level="INFO">Current location contains '/todos'.</msg>
+<arg>/todos</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-31T00:02:29.623246" elapsed="0.004010"/>
+</kw>
+<kw name="Teardown Browser" owner="keywords">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-07-31T00:02:29.628109" elapsed="6.157980"/>
+</kw>
+<status status="PASS" start="2025-07-31T00:02:29.628109" elapsed="6.157980"/>
+</kw>
+<doc>Tester la navigation entre les pages</doc>
+<tag>navigation</tag>
+<tag>ui</tag>
+<status status="PASS" start="2025-07-31T00:02:25.461400" elapsed="10.324689"/>
+</test>
+<doc>Tests de gestion des erreurs</doc>
+<status status="PASS" start="2025-07-31T00:02:25.250516" elapsed="10.535573"/>
+</suite>
+<status status="PASS" start="2025-07-31T00:02:25.234891" elapsed="10.551198"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">navigation</stat>
+<stat pass="1" fail="0" skip="0">ui</stat>
+</tag>
+<suite>
+<stat name="Ui" id="s1" pass="1" fail="0" skip="0">Ui</stat>
+<stat name="03 Error Handling Tests" id="s1-s1" pass="1" fail="0" skip="0">Ui.03 Error Handling Tests</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-07-31T00:02:26.011568" level="WARN">The chromedriver version (137.0.7151.56) detected in PATH at C:\Users\FCHERQUI\AppData\Local\Programs\Python\Python38-32\chromedriver.exe might not be compatible with the detected chrome version (138.0.7204.169); currently, chromedriver 138.0.7204.183 is recommended for chrome 138.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
